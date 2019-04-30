@@ -1,3 +1,7 @@
+<?php
+	session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -6,6 +10,14 @@
 	</head>
 	<body>
 		<h1>Cadastrar Produtos</h1>
+		<?php
+			if (isset($_session['msg'])) {
+
+					echo $_SESSION['msg'];
+					unset($_SESSION['msg']);
+							}
+
+		?>
 		<form method="POST" action="processa.php">
 			<label>SKU: </label>
 			<input type="text" name="sku" placeholder="SKU do produto"><br><br>
